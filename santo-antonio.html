@@ -21,7 +21,12 @@
             margin-top: 0;
             background-color: rgb(27, 12, 2);
             color: white;
-        }h1{
+        }
+        header a{
+            font-size: 6vw;
+            color: white;
+        }
+        h1{
             margin: 0;
             text-align: center;
             font-size: 3em;
@@ -43,11 +48,11 @@
             display: flex;
             gap: 20px;
         }
-        a,input{
+        a input, input{
             cursor: pointer;
-            width: 90%;
+            width: 100%;
             height: 70px;
-            font-size: 1.7em;
+            font-size: 6vw;
             border-radius: 10px;
             border: 0;
             background-color: rgb(27, 12, 2);
@@ -59,12 +64,24 @@
             text-align: center;
             font-style: italic;
         }
+        @media (max-width: 768px) {
+             img{
+                width: 100%;
+                height: auto;
+            }
+            .flex{
+                flex-direction: column-reverse;
+            }
+        }
     </style>
     <title>Santo Antônio de Pádua</title>
 </head>
 <body>
     <header>
+        <a href="apoie.html">Ajude</a>
         <h1>Santo Antônio de Pádua</h1>
+        <a href="https://forms.gle/Paz9HSxHkMMpAM5M9" target="_blank">Avalie</a>
+        
     </header>
     <main>
         <section>
