@@ -78,3 +78,12 @@ footer a{
     border-radius: 20px;
     background-color: rgba(198, 228, 218, 0.521);
 }
+@media (max-width: 768px) {
+    .santo img{
+        width: 100%;
+        height: auto;
+    }
+    .santo{
+        flex-direction: column;
+    }
+}
