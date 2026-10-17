@@ -1,0 +1,80 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: center;
+}
+header article{
+    width: 95%;
+}
+nav{
+    display: flex;
+    gap:20px;
+    background-color: rgb(46, 46, 46);
+    height: 50px;
+}
+nav a{
+    cursor: pointer;
+    margin: auto;
+    font-size: 1.4em;
+    color: white;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+main{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70vw;
+}
+.foto{
+    width: 50%;
+    height: 30%;
+}
+.santo{
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    border: solid 2px rgb(245, 244, 244);
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+}
+.santo:hover{
+    background-color: rgba(0, 0, 0, 0.055);
+}
+footer{
+    padding-left: 10px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.foter{
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+a{
+    text-decoration: none;
+}
+footer a{
+    text-decoration: underline;
+    color: rgb(33, 28, 56);
+    font-size: 1.3em;
+}
+.card{
+    padding: 10px;
+    width: 90vw;
+    border-radius: 20px;
+    background-color: rgba(198, 228, 218, 0.521);
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apoie o Vida Santa</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background-color: #f0f7ff;
+            color: #183153;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0756a5, #1688d4);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+        }
+
+        header p {
+            margin: 0;
+            color: #e4f2ff;
+        }
+
+        main {
+            width: min(90%, 750px);
+            margin: 35px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px #18315315;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #0756a5;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .carregamento {
+            width: 100%;
+            height: 18px;
+            background-color: #dce8f5;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 20px 0 10px;
+        }
+
+        .progresso {
+            width: 35%;
+            height: 100%;
+            background: linear-gradient(90deg, #1688d4, #42c7e9);
+            border-radius: 30px;
+            transition: width 0.5s ease;
+        }
+
+        #porcentagem {
+            text-align: right;
+            color: #0756a5;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .pix {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .pix input {
+            min-width: 0;
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #b7cce2;
+            border-radius: 8px;
+            background: #f5f9ff;
+            color: #183153;
+            font-size: 0.9rem;
+        }
+
+        .pix button {
+            border: none;
+            border-radius: 8px;
+            padding: 12px 15px;
+            background-color: #0756a5;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .pix button:hover {
+            background-color: #063e78;
+        }
+
+        #resposta {
+            color: #168447;
+            font-weight: bold;
+            min-height: 20px;
+        }
+
+        footer {
+            background-color: #102b4e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 5px;
+        }
+
+        @media (max-width: 480px) {
+            main {
+                width: 92%;
+                margin: 20px auto;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .pix {
+                flex-wrap: wrap;
+            }
+
+            .pix input {
+                flex-basis: 100%;
+            }
+
+            .pix button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">← Voltar para o início</a>
+
+        <h1>Apoie o Vida Santa</h1>
+
+        <p>Ajude-nos a compartilhar a fé e a história dos santos</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Ajude nosso projeto</h2>
+
+            <p>
+                O Vida Santa tem como objetivo divulgar a vida dos santos,
+                seus exemplos de fé e seus ensinamentos. Sua contribuição
+                pode nos ajudar a continuar desenvolvendo este projeto.
+            </p>
+
+            <p>
+                Se desejar contribuir, você pode utilizar o Pix abaixo.
+                Toda contribuição é voluntária!
+            </p>
+
+            <div class="carregamento"
+                 role="progressbar"
+                 aria-label="Progresso da arrecadação"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="35">
+                <div class="progresso" id="progresso"></div>
+            </div>
+
+            <p id="porcentagem">35% da meta</p>
+
+            <p>
+                A porcentagem é apenas ilustrativa. Atualize-a quando
+                tiver os valores reais da arrecadação.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Contribua via Pix</h2>
+
+            <p>
+                Copie o código Pix e cole no aplicativo do seu banco.
+                Antes de confirmar, confira o nome do destinatário
+                e os dados da transferência.
+            </p>
+
+            <div class="pix">
+                <input
+                    type="text"
+                    id="texto"
+                    value="00020126570014br.gov.bcb.pix0114+55129965342640217apoie nosso amigo5204000053039865802BR5930luiz otavio da Silva meirelles6013cruzeiro - sp62170513LUI050920261263047416"
+                    readonly
+                    aria-label="Código Pix para copiar"
+                >
+
+                <button type="button" onclick="copiarTexto()">
+                    Copiar Pix
+                </button>
+            </div>
+
+            <p id="resposta" role="status" aria-live="polite"></p>
+
+            <p>
+                Obrigado por apoiar o Vida Santa! Que Deus abençoe
+                você e sua família.
+            </p>
+        </section>
+    </main>
+    <script>
+        async function copiarTexto() {
+            const input = document.getElementById("texto");
+            const resposta = document.getElementById("resposta");
+
+            if (
+                !input.value ||
+                input.value === "COLOQUE_AQUI_O_CODIGO_PIX_VALIDO"
+            ) {
+                resposta.style.color = "#b42318";
+                resposta.textContent =
+                    "Adicione um código Pix válido antes de copiar.";
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(input.value);
+                resposta.style.color = "#168447";
+                resposta.textContent = "Código copiado! ✅";
+            } catch (erro) {
+                input.select();
+                const copiou = document.execCommand("copy");
+
+                resposta.style.color = copiou ? "#168447" : "#b42318";
+                resposta.textContent = copiou
+                    ? "Código copiado! ✅"
+                    : "Não foi possível copiar. Selecione e copie manualmente.";
+            }
+        }
+    </script>
+
+</body>
+</html>
